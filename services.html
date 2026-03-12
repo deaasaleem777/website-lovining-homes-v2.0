@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خدمات فندق لوفينينغ هومز: إيواء فندقي، عيادة بيطرية، تدريب، تجميل، حضانة نهارية، ونقل حيوانات أليفة في هونغ كونغ.">
+    <title>خدماتنا - لوفينينغ هومز هونغ كونغ</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">لوفينينغ هومز</a>
+            <div class="hidden md:flex space-x-reverse space-x-8 text-gray-600">
+                <a href="index.html" class="hover:text-blue-600">الرئيسية</a>
+                <a href="services.html" class="hover:text-blue-600 font-bold">خدماتنا</a>
+                <a href="about.html" class="hover:text-blue-600">من نحن</a>
+                <a href="contact.html" class="hover:text-blue-600">اتصل بنا</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="login.html" class="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">دخول</a>
+                <button id="hamburger-btn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[60] transform translate-x-full md:hidden border-l border-gray-100">
+            <div class="p-6">
+                <button id="close-menu-btn" class="text-gray-500 mb-8"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                <div class="flex flex-col space-y-6 text-lg font-bold text-gray-700">
+                    <a href="index.html" class="hover:text-blue-600">الرئيسية</a>
+                    <a href="services.html" class="hover:text-blue-600">خدماتنا</a>
+                    <a href="about.html" class="hover:text-blue-600">من نحن</a>
+                    <a href="contact.html" class="hover:text-blue-600">اتصل بنا</a>
+                    <hr>
+                    <a href="login.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition text-center">دخول</a>
+                </div>
+            </div>
+        </div>
+        <div id="menu-overlay" class="fixed inset-0 bg-black opacity-50 z-[55] hidden md:hidden"></div>
+    </header>
+
+    <!-- Services Content -->
+    <section class="container mx-auto px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">خدماتنا المتميزة</h2>
+            <p class="text-gray-600">نقدم باقة واسعة من الخدمات المصممة خصيصاً لتلبية احتياجات حيوانك الأليف في هونغ كونغ</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- Service 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 card-hover text-center flex flex-col h-full">
+                <div class="service-icon w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">🏨</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">استضافة فندقية</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed flex-grow">أجنحة مكيفة وآمنة مع إشراف على مدار الساعة. مثالية للسفر أو الإقامات الطويلة.</p>
+                <button class="open-modal-btn w-full py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition mt-auto" data-service="استضافة فندقية">احجز الآن</button>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 card-hover text-center flex flex-col h-full">
+                <div class="service-icon w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">🏥</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">عناية طبية</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed flex-grow">عيادة داخلية مجهزة للفحوصات الدورية والتعامل مع الحالات الطارئة تحت إشراف أطباء بيطريين معتمدين.</p>
+                <button class="open-modal-btn w-full py-3 border-2 border-red-500 text-red-500 font-bold rounded-xl hover:bg-red-500 hover:text-white transition mt-auto" data-service="عناية طبية">احجز موعد</button>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 card-hover text-center flex flex-col h-full">
+                <div class="service-icon w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">🎾</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">التدريب السلوكي</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed flex-grow">برامج تدريب متخصصة لتعديل السلوك وتعليم الأوامر الأساسية والمتقدمة مع مدربين محترفين.</p>
+                <button class="open-modal-btn w-full py-3 border-2 border-green-600 text-green-600 font-bold rounded-xl hover:bg-green-600 hover:text-white transition mt-auto" data-service="التدريب السلوكي">سجل الآن</button>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 card-hover text-center flex flex-col h-full">
+                <div class="service-icon w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">✂️</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">تجميل (Grooming)</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed flex-grow">خدمات استحمام، قص شعر، وتنظيف شامل باستخدام مستحضرات آمنة ومخصصة لكل سلالة.</p>
+                <button class="open-modal-btn w-full py-3 border-2 border-purple-500 text-purple-500 font-bold rounded-xl hover:bg-purple-500 hover:text-white transition mt-auto" data-service="تجميل (Grooming)">احجز موعد</button>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 card-hover text-center flex flex-col h-full">
+                <div class="service-icon w-20 h-20 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">☀️</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">حضانة نهارية</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed flex-grow">بيئة آمنة للعب والتنشئة الاجتماعية أثناء عملك، مع مراقبة مستمرة ورعاية كاملة.</p>
+                <button class="open-modal-btn w-full py-3 border-2 border-yellow-500 text-yellow-500 font-bold rounded-xl hover:bg-yellow-500 hover:text-white transition mt-auto" data-service="حضانة نهارية">اشترك الآن</button>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 card-hover text-center flex flex-col h-full">
+                <div class="service-icon w-20 h-20 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">🚐</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">خدمة النقل</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed flex-grow">توصيل آمن ومكيف من وإلى الفندق في جميع أنحاء هونغ كونغ (جزيرة كولون والقرى الجديدة).</p>
+                <button class="open-modal-btn w-full py-3 border-2 border-teal-500 text-teal-500 font-bold rounded-xl hover:bg-teal-500 hover:text-white transition mt-auto" data-service="خدمة النقل">اطلب التوصيل</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4 modal-overlay">
+        <div class="modal-content bg-white rounded-3xl shadow-2xl w-full max-w-lg relative overflow-hidden">
+            <div class="bg-blue-600 p-6 text-white">
+                <button id="close-modal-btn" class="absolute top-4 left-4 text-white hover:text-gray-200 transition">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <h3 class="text-2xl font-bold text-center">استمارة طلب الخدمة</h3>
+            </div>
+            
+            <div class="p-8">
+                <form id="booking-form" class="space-y-5">
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">الخدمة المطلوبة</label>
+                        <input type="text" id="selected-service" readonly class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-100 text-blue-600 font-bold outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">الاسم الكامل</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:border-blue-500 transition" placeholder="الاسم">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">رقم الهاتف</label>
+                        <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:border-blue-500 transition" placeholder="رقم الهاتف">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">اسم الحيوان الأليف</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:border-blue-500 transition" placeholder="اسم الحيوان">
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-10 rounded-xl text-lg shadow-lg transition transform hover:scale-105 mt-4">
+                        إرسال الطلب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-3xl font-bold mb-6 text-blue-400">لوفينينغ هومز</div>
+            <p class="text-gray-400 mb-4">هونغ كونغ - مونغ كوك</p>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-sm text-gray-500">
+                &copy; 2024 لوفينينغ هومز هونغ كونغ. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

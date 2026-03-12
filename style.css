@@ -1,0 +1,82 @@
+/* 
+    ملف التنسيقات الخارجي (External CSS)
+    يتم ربطه بجميع الصفحات لضمان اتساق التصميم وتحسين سرعة التحميل (Caching).
+*/
+
+/* --- الأساسيات (Base Styles) --- */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f8fafc;
+    /* نموذج الصندوق: ضمان حساب العرض والارتفاع بما يحتويه من Padding و Border */
+    box-sizing: border-box; 
+}
+
+/* تطبيق Box-sizing لجميع العناصر */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* --- تنسيقات الصفحة الرئيسية --- */
+.hero-bg {
+    /* صورة الخلفية مع طبقة تعتيم لضمان وضوح النص */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- المكونات التفاعلية (Components) --- */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+/* تأثير التحويم: استخدام Transform لرفع البطاقة للأعلى */
+.card-hover:hover {
+    transform: translateY(-5px); /* يغير الموقع دون التأثير على تدفق العناصر الأخرى */
+}
+
+.service-icon {
+    transition: transform 0.3s ease;
+}
+
+.card-hover:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* --- القائمة الجانبية للجوال (Mobile Menu) --- */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-open {
+    transform: translateX(0) !important;
+}
+
+/* --- نافذة الحجز (Modal) --- */
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 
+    شرح نموذج الصندوق (CSS Box Model) في التنسيقات التالية:
+    - Content: المحتوى (نص أو صورة).
+    - Padding: المسافة الداخلية بين المحتوى والحدود (مثل p-8).
+    - Border: الحدود المحيطة (مثل border-2).
+    - Margin: المسافة الخارجية بين العنصر وغيره (مثل mb-4).
+*/
