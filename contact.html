@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوفينينغ هومز - اتصل بنا</title>
+    <!-- تحسين SEO للصفحة -->
+    <meta name="description" content="تواصل مع فندق لوفينينغ هومز في هونغ كونغ. الموقع: مونغ كوك. الهاتف: +852 0000 0000. نحن هنا لمساعدتك.">
+    <title>اتصل بنا - لوفينينغ هومز هونغ كونغ</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -27,6 +30,7 @@
                 </button>
             </div>
         </nav>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[60] transform translate-x-full md:hidden transition-transform duration-300 border-l border-gray-100">
             <div class="p-6">
                 <button id="close-menu-btn" class="text-gray-500 mb-8"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
@@ -59,141 +63,14 @@
                 </div>
             </div>
             <div class="p-10 md:w-2/3">
-                <form onsubmit="event.preventDefault(); alert('تم الإرسال!');" class="space-y-6">
-                    <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none" placeholder="الاسم">
-                    <input type="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none" placeholder="الإيميل">
-                    <textarea class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none h-32" placeholder="الرسالة"></textarea>
-                    <button type="submit" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-xl w-full">إرسال</button>
+                <!-- التعديل: إضافة required ومنع الارسال لو فارغ -->
+                <form id="contact-form" onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'); this.reset();" class="space-y-6">
+                    <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:border-blue-500 transition" placeholder="الاسم">
+                    <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:border-blue-500 transition" placeholder="الإيميل">
+                    <textarea required class="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none h-32 focus:border-blue-500 transition" placeholder="الرسالة"></textarea>
+                    <button type="submit" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-xl w-full hover:bg-blue-700 transition">إرسال</button>
                 </form>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="text-3xl font-bold mb-6 text-blue-400">لوفينينغ هومز</div>
-            <p class="text-gray-400 mb-4">هونغ كونغ - مونغ كوك</p>
-            <div class="mt-8 border-t border-gray-800 pt-8 text-sm text-gray-500">
-                &copy; 2024 لوفينينغ هومز هونغ كونغ. جميع الحقوق محفوظة.
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوفينينغ هومز - الرئيسية</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Header / Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-600">لوفينينغ هومز</a>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-reverse space-x-8 text-gray-600">
-                <a href="index.html" class="hover:text-blue-600 font-bold">الرئيسية</a>
-                <a href="services.html" class="hover:text-blue-600">خدماتنا</a>
-                <a href="about.html" class="hover:text-blue-600">من نحن</a>
-                <a href="contact.html" class="hover:text-blue-600">اتصل بنا</a>
-            </div>
-            
-            <div class="flex items-center gap-4">
-                <a href="login.html" class="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">دخول</a>
-                
-                <!-- Hamburger Button -->
-                <button id="hamburger-btn" class="md:hidden text-gray-600 focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile Side Menu -->
-        <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[60] transform translate-x-full md:hidden transition-transform duration-300 border-l border-gray-100">
-            <div class="p-6">
-                <button id="close-menu-btn" class="text-gray-500 mb-8">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-                <div class="flex flex-col space-y-6 text-lg font-bold text-gray-700">
-                    <a href="index.html" class="hover:text-blue-600">الرئيسية</a>
-                    <a href="services.html" class="hover:text-blue-600">خدماتنا</a>
-                    <a href="about.html" class="hover:text-blue-600">من نحن</a>
-                    <a href="contact.html" class="hover:text-blue-600">اتصل بنا</a>
-                    <hr>
-                    <a href="login.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition text-center">دخول</a>
-                </div>
-            </div>
-        </div>
-        <!-- Menu Overlay -->
-        <div id="menu-overlay" class="fixed inset-0 bg-black opacity-50 z-[55] hidden md:hidden"></div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-bg h-[600px] flex items-center justify-center text-center text-white px-4">
-        <div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">بيت حيوانك الأليف الثاني</h1>
-            <p class="text-xl mb-8 opacity-90">نوفر لحيوانك الراحة والأمان والحب الذي يستحقه في غيابك.</p>
-            <a href="services.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-10 rounded-full text-lg shadow-lg transition transform hover:scale-105 inline-block">
-                احجز الآن 🐾
-            </a>
-        </div>
-    </section>
-
-    <!-- General Info Section -->
-    <section class="container mx-auto px-6 py-20">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">لماذا تختار فندقنا؟</h2>
-            <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Location Info -->
-            <div class="bg-white p-8 rounded-2xl shadow-md text-center border border-gray-50">
-                <div class="text-4xl mb-4">📍</div>
-                <h3 class="font-bold text-xl mb-2">الموقع الاستراتيجي</h3>
-                <p class="text-gray-600">يقع فندقنا في قلب هونغ كونغ، منطقة مونغ كوك، بمساحات داخلية مكيفة ومنظمة.</p>
-            </div>
-            <!-- Working Hours -->
-            <div class="bg-white p-8 rounded-2xl shadow-md text-center border border-gray-50">
-                <div class="text-4xl mb-4">⏰</div>
-                <h3 class="font-bold text-xl mb-2">متاحون دائماً</h3>
-                <p class="text-gray-600">نستقبل ضيوفنا يومياً من الساعة 9:00 صباحاً وحتى 9:00 مساءً.</p>
-            </div>
-            <!-- Capacity -->
-            <div class="bg-white p-8 rounded-2xl shadow-md text-center border border-gray-50">
-                <div class="text-4xl mb-4">🐕</div>
-                <h3 class="font-bold text-xl mb-2">مساحات مخصصة</h3>
-                <p class="text-gray-600">نوفر أكثر من 30 جناحاً خاصاً مصمماً بمختلف الأحجام لتناسب جميع السلالات.</p>
-            </div>
-            <!-- Security -->
-            <div class="bg-white p-8 rounded-2xl shadow-md text-center border border-gray-50">
-                <div class="text-4xl mb-4">🛡️</div>
-                <h3 class="font-bold text-xl mb-2">أمان حيوانك أولاً</h3>
-                <p class="text-gray-600">كاميرات مراقبة 24/7 وطاقم أمني متخصص لضمان سلامة حيوانك الأليف.</p>
-            </div>
-        </div>
-
-        <div class="mt-16 bg-blue-600 rounded-3xl p-10 text-white">
-            <h3 class="text-2xl font-bold mb-6 text-center">شروط الاستقبال العامة</h3>
-            <ul class="grid md:grid-cols-2 gap-4 list-disc list-inside opacity-90">
-                <li>يجب أن يكون الكلب حاصلاً على كافة التطعيمات السنوية.</li>
-                <li>خلو الكلب من الأمراض المعدية أو الطفيليات الخارجية.</li>
-                <li>يتم إجراء فحص سريع عند الاستقبال لضمان صحة جميع الضيوف.</li>
-                <li>يفضل إحضار طعام الكلب الخاص لتجنب اضطرابات الجهاز الهضمي.</li>
-            </ul>
         </div>
     </section>
 
